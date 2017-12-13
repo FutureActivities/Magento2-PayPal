@@ -1,0 +1,15 @@
+{
+    "name": "futureactivies/magento2-paypal",
+    "description": "Alternative PayPal express payment method that supports the new REST API.",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "require": {
+        "paypal/rest-api-sdk-php": "^1.7.1"
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+          "FutureActivities\\PayPal\\": ""
+        }
+    }
+}

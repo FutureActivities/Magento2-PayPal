@@ -3,6 +3,8 @@
 A PayPal payment method that supports the new PayPal REST API, designed to be used
 by the Magento REST API.
 
+This also supports refunds from within the Magento admin.
+
 ## How to use
 
 This is a Magento REST API only checkout method. PUT an order to the following endpoint:

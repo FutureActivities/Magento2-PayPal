@@ -7,4 +7,5 @@
             </argument>
         </arguments>
     </type>
+    <preference for="FutureActivities\PayPal\Api\CredentialsInterface"  type="FutureActivities\PayPal\Model\Credentials" />
 </config>

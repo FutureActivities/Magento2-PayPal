@@ -30,3 +30,6 @@ Where `PayPalResponse` is the response object from the [paypal-checkout](https:/
 You need to create a PayPal REST app first at developer.paypal.com.
 
 When enabling this payment method you need to set the Client ID and secret values, for both the sandbox and live versions.
+
+## API
+

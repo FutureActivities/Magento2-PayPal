@@ -33,3 +33,6 @@ When enabling this payment method you need to set the Client ID and secret value
 
 ## API
 
+Call the following API endpoint to retrieve the sandbox and live client IDs:
+
+    /V1/paypal/credentials

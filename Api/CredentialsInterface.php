@@ -5,9 +5,9 @@ interface CredentialsInterface
 {
     /**
      * Returns the sandbox and live client IDs
-     *
+     * 
      * @api
-     * @return string
+     * @return FutureActivities\PayPal\Api\Data\CredentialsResultInterface
      */
     public function client();
 }

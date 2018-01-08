@@ -5,20 +5,40 @@ use FutureActivities\PayPal\Api\Data\CredentialsResultInterface;
 
 class CredentialsResult implements CredentialsResultInterface
 {
+    protected $sandboxEnabled = false;
     protected $sandbox = null;
     protected $production = null;
 
     /**
-     * Set the result type
+     * Set the data
      * 
-     * @param string $type
+     * @param boolean $value
+     * @return null
+     */
+    public function setSandboxEnabled($value)
+    {
+        $this->sandboxEnabled = $value;
+    }
+        
+    /**
+     * Get the result 
+     * 
+     * @return boolean
+     */
+    public function getSandboxEnabled() 
+    {
+        return $this->sandboxEnabled;
+    }
+    
+    /**
+     * Set the result
+     * 
+     * @param string $id
      * @return string
      */
     public function setSandbox($id)
     {
         $this->sandbox = $id;
-        
-        return $id;
     }
     
     /**

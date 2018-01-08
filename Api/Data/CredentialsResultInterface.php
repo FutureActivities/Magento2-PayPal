@@ -7,15 +7,30 @@ namespace FutureActivities\PayPal\Api\Data;
 interface CredentialsResultInterface
 {
     /**
-     * Set the result type
+     * Set the data
      * 
-     * @param string $type
+     * @param boolean $value
+     * @return null
+     */
+    public function setSandboxEnabled($value);
+        
+    /**
+     * Get the result 
+     * 
+     * @return boolean
+     */
+    public function getSandboxEnabled();
+    
+    /**
+     * Set the data
+     * 
+     * @param string $id
      * @return string
      */
     public function setSandbox($id);
     
     /**
-     * Get the result type
+     * Get the result
      * 
      * @return string
      */

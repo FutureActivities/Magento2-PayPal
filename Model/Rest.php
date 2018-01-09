@@ -55,7 +55,7 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
         $this->paypal = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
                 ($this->_paypalSandbox ? $this->_paypalSandboxClient : $this->_paypalClient),
-                ($this->_paypalSandbox ? $this->_paypalClient : $this->_paypalSecret)
+                ($this->_paypalSandbox ? $this->_paypalSandboxSecret : $this->_paypalSecret)
             )
         );
     }

@@ -19,15 +19,27 @@
                 </field>
                 <field id="sandbox_client_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PayPal Sandbox Client ID</label>
+                    <depends>
+                        <field id="sandbox_enabled">1</field>
+                    </depends>
                 </field>
                 <field id="sandbox_secret" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PayPal Sandbox Secret</label>
+                    <depends>
+                        <field id="sandbox_enabled">1</field>
+                    </depends>
                 </field>
                 <field id="client_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PayPal Live Client ID</label>
+                    <depends>
+                        <field id="sandbox_enabled">0</field>
+                    </depends>
                 </field>
                 <field id="secret" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PayPal Live Secret</label>
+                    <depends>
+                        <field id="sandbox_enabled">0</field>
+                    </depends>
                 </field>
                 <field id="sandbox_enabled" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Sandbox Mode?</label>

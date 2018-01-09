@@ -12,7 +12,7 @@
                 <active>1</active>
                 <model>FutureActivities\PayPal\Model\Rest</model>
                 <payment_action>authorize_capture</payment_action>
-                <title>PayPal REST</title>
+                <title>PayPal</title>
                 <allowspecific>0</allowspecific>
                 <min_order_total>1</min_order_total>
             </paypal_rest>

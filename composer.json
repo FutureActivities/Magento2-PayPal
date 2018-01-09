@@ -1,5 +1,5 @@
 {
-    "name": "futureactivies/magento2-paypal",
+    "name": "futureactivities/magento2-paypal",
     "description": "Alternative PayPal express payment method that supports the new REST API.",
     "version": "1.0.0",
     "type": "magento2-module",

@@ -58,6 +58,10 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
                 ($this->_paypalSandbox ? $this->_paypalSandboxSecret : $this->_paypalSecret)
             )
         );
+        
+        if (!$this->_paypalSandbox) {
+            $this->paypal->setConfig(['mode' => 'live']);
+        }
     }
     
     public function capture(\Magento\Payment\Model\InfoInterface $payment, $amount)

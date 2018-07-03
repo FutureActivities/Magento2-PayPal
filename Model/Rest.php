@@ -95,12 +95,12 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
             
             $payment->setTransactionId($sale->getId())->setIsTransactionClosed(0);
  
-            return $this;
- 
         } catch (\Exception $e) {
             $this->debugData(['exception' => $e->getMessage()]);
-            throw new \Magento\Framework\Validator\Exception(__($e->getMessage()));
+            //throw new \Magento\Framework\Validator\Exception(__($e->getMessage()));
         }
+        
+        return $this;
     }
  
     public function refund(\Magento\Payment\Model\InfoInterface $payment, $amount)

@@ -1,6 +1,8 @@
 <?php
 namespace FutureActivities\PayPal\Model;
 
+use Magento\Sales\Model\Order;
+
 class Rest extends \Magento\Payment\Model\Method\AbstractMethod
 {
     const METHOD_CODE = 'paypal_rest';
@@ -70,6 +72,7 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
         $billing = $order->getBillingAddress();
         
         try {
+            $order->setState(Order::STATE_PENDING_PAYMENT)->setStatus(Order::STATE_PENDING_PAYMENT)->save();
             
             $payerId = $payment->getAdditionalInformation('payerID');
             $paymentId = $payment->getAdditionalInformation('paymentID');
@@ -96,8 +99,12 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
             $payment->setTransactionId($sale->getId())->setIsTransactionClosed(0);
  
         } catch (\Exception $e) {
+            $order->setState(Order::STATE_CLOSED)
+                ->setStatus(Order::STATE_CLOSED)
+                ->addStatusHistoryComment($e->getMessage())
+                ->save();
             $this->debugData(['exception' => $e->getMessage()]);
-            //throw new \Magento\Framework\Validator\Exception(__($e->getMessage()));
+            throw new \Magento\Framework\Validator\Exception(__($e->getMessage()));
         }
         
         return $this;

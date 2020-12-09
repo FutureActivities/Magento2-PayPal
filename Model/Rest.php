@@ -87,6 +87,8 @@ class Rest extends \Magento\Payment\Model\Method\AbstractMethod
             $paypalAmount->setTotal($amount);
             
             $paypalTransaction = new \PayPal\Api\Transaction();
+            $paypalTransaction->setReferenceId($order->getIncrementId());
+            $paypalTransaction->setInvoiceNumber($order->getIncrementId());
             $paypalTransaction->setAmount($paypalAmount);
             
             $paypalExecution->addTransaction($paypalTransaction);
